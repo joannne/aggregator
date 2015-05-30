@@ -1,7 +1,4 @@
 aggregator
 ==============================
 
-aggregator <3
-
-
-aggregator for good book, music, and movie recommendations from my friends 
+aggregator for good book, music, and movie recommendations from friends. built in django (uses postgresql and cookiecutter)
