@@ -1,0 +1,14 @@
+{% extends "page_base.html" %}
+
+{% block title %} suggest music {% endblock %}
+
+
+{% block paragraph %}
+   
+    <form method="POST" action="suggest_music"> 
+    	{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">submit</button>
+    </form>
+{% endblock %}
+

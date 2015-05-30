@@ -1,0 +1,44 @@
+{% extends "page_base.html" %}
+
+{% block title %} music recommendations {% endblock %}
+<body>
+
+
+{% block paragraph %}
+
+<p>
+current categories:	<a href= "{% url 'all' %}"> all</a>,  <a href= "{% url 'books' %}">  books</a>, <a href= "{% url 'movies' %}"> movies</a>, <a href= "{% url 'music' %}">music </a> 
+</p>
+
+
+<br>
+<p>
+<table style="width:60%"> 
+	<tr> 
+		<th> title </th>
+		<th> artist </th>
+		<th> genre </th>
+		<th> recommended by </th>
+	</tr>
+
+{% for p in music %}
+	<tr> 
+		<td> {{ p.title }} </td>
+		<td> {{ p.artist }} </td>
+		<td> {{ p.genre }} </td>
+		<td> {{ p.user }} </td>
+	</tr>
+{% endfor %}
+</table>
+</p>
+
+
+<br>
+<br>
+<br>
+<br>
+<p>
+<a href= "{% url 'suggest_music' %}"> recommend music &lt;3 </a>
+</p>
+
+{% endblock %}

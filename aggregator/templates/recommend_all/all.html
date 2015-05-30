@@ -1,0 +1,69 @@
+{% extends "page_base.html" %}
+
+{% block title %} all recommendations {% endblock %}
+<body>
+
+
+{% block paragraph %}
+
+<p>
+current categories:	<a href= "{% url 'all' %}"> all</a>, <a href= "{% url 'books' %}">  books</a>, <a href= "{% url 'movies' %}">movies</a>, <a href= "{% url 'music' %}">music </a>
+</p>
+
+
+<br>
+<p>
+<table style="width:60%"> 
+	<tr> 
+		<th> category </th>
+		<th> title </th>
+		<th> author </th>
+		<th> genre </th>
+		<th> recommended by </th>
+	</tr>
+
+{% for p in books %}
+	<tr> 
+		<td> book </td>
+		<td> {{ p.title }} </td>
+		<td> {{ p.author }} </td>
+		<td> {{ p.genre }} </td>
+		<td> {{ p.user }} </td>
+	</tr>
+{% endfor %}
+
+{% for p in movies %}
+	<tr> 
+		<td> movie </td>
+		<td> {{ p.title }} </td>
+		<td> </td>
+		<td> {{ p.genre }} </td>
+		<td> {{ p.user }} </td>
+	</tr>
+{% endfor %}
+
+{% for p in music %}
+	<tr> 
+		<td> music </td>
+		<td> {{ p.title }} </td>
+		<td> {{ p.artist }} </td>
+		<td> {{ p.genre }} </td>
+		<td> {{ p.user }} </td>
+	</tr>
+{% endfor %}
+</table>
+</p>
+
+
+<br>
+<br>
+<br>
+<br>
+<p>
+make a recommendation &lt;3
+<br>
+&emsp;&emsp; <a href= "{% url 'suggest_book' %}"> book </a>, <a href= "{% url 'suggest_movie' %}"> movie </a>, <a href= "{% url 'suggest_music' %}"> music </a>
+
+</p>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "page_base.html" %}
+
+
+
+
+{% block title %} confirmed {% endblock %}
+{% block paragraph %}
+
+<p> great suggestion! </p>
+<br>
+<p> successfully added! </p>
+<br>
+<br>
+<br>
+
+<p>
+current categories:	<a href= "{% url 'all' %}"> all</a>, <a href= "{% url 'books' %}">  books</a>, <a href= "{% url 'movies' %}">movies</a>, <a href= "{% url 'music' %}">music </a>
+</p>
+<br>
+<p>
+or recommend again:<a href= "{% url 'suggest_book' %}"> book</a>, <a href= "{% url 'suggest_movie' %}">movie </a>, or <a href= "{% url 'suggest_music' %}">music </a>
+</p>
+
+{% endblock %}

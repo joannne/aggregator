@@ -1,0 +1,14 @@
+{% extends "page_base.html" %}
+
+{% block title %} recommendations {% endblock %}
+
+{% block paragraph %}
+<p>
+current categories:	<a href= "{% url 'all' %}"> all</a>, <a href= "{% url 'books' %}">  books</a>, <a href= "{% url 'movies' %}">movies</a>, <a href= "{% url 'music' %}">music </a>
+</p>
+
+<p>
+add a recommendation
+</p>
+
+{% endblock %}
